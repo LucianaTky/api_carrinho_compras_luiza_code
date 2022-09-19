@@ -1,0 +1,78 @@
+### ROTA PRINCIPAL ###
+GET  http://127.0.0.1:8000/ HTTP/1.1
+content-type: application/json
+### CRIAR USUÁRIO ###
+POST http://127.0.0.1:8000/usuario HTTP/1.1
+content-type: application/json
+
+{
+    "id": 1,
+    "nome": "Juriscleide",
+    "email": "juriscleidedasilvae@email.com",
+    "senha": "1234"
+}
+
+### BUSCAR USUÁRIO ###
+GET http://127.0.0.1:8000/usuario?id=1 HTTP/1.1
+content-type: application/json
+
+### BUSCAR USUÁRIO POR NOME ###
+GET http://127.0.0.1:8000/usuario/nome?nome=Juriscleide HTTP/1.1
+content-type: application/json
+
+### DELETAR USUÁRIO ###
+DELETE  http://127.0.0.1:8000/usuario?id=1 HTTP/1.1
+content-type: application/json
+
+
+### CADASTRAR ENDEREÇO ###
+POST http://127.0.0.1:8000/endereco/1 HTTP/1.1
+content-type: application/json
+
+{
+    "id":1,
+    "rua": "Rua Ladrilhada",
+    "cep": "99999-999",
+    "cidade": "São Paulo",
+    "estado": "SP"
+}
+
+### BUSCAR ENDEREÇO ###
+GET http://127.0.0.1:8000/usuario/1/enderecos/ HTTP/1.1
+content-type: application/json
+
+### DELETAR ENDEREÇO ###
+DELETE http://127.0.0.1:8000/endereco/1 HTTP/1.1
+content-type: application/json
+
+
+### CADASTRAR O PRODUTO ###
+POST http://127.0.0.1:8000/produto HTTP/1.1
+content-type: application/json
+
+{
+    "id": 1,
+    "nome": "Sorvete",
+    "descricao": "Doce gelado",
+    "preco": 9.99
+}
+
+### BUSCAR PRODUTO ###
+GET http://127.0.0.1:8000/produto/1 HTTP/1.1
+
+### DELETAR PRODUTO ###
+DELETE http://127.0.0.1:8000/produto/1 HTTP/1.1
+
+
+### ADCIONAR PRODUTO NO CARRINHO ###
+POST http://127.0.0.1:8000/carrinho/1/1 HTTP/1.1
+content-type: application/json
+
+### DETALHES CARRINHO ###
+GET http://127.0.0.1:8000/carrinho/1/info HTTP/1.1
+
+### INFO CARRINHO ###
+GET http://127.0.0.1:8000/carrinho/1 HTTP/1.1
+
+### DELETA CARRINHO ###
+DELETE  http://127.0.0.1:8000/carrinho/1 HTTP/1.1
