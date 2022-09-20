@@ -1,8 +1,4 @@
-from models.Usuario import Usuario
-from models.Endereco import Endereco
-from models.ListaDeEnderecosDoUsuario import ListaDeEnderecoDoUsuario
-from models.Produto import Produto
-from models.CarrinhoDeCompras import CarrinhoDeCompras
+from model.Cart import Usuario, Endereco, ListaDeEnderecoDoUsuario, Produto,CarrinhoDeCompras
 from fastapi import FastAPI
 
 app = FastAPI()
